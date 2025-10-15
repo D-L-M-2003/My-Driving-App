@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, SafeAreaView, TextInput, ScrollView,Butt
 
 export default function App() {
   const age = 20;
-  const licenseyears= 0;
+  const licenseyears= 0-4;
   let feedback = '';
   if (age >= 18)   
    if(licenseyears >= 3) 
