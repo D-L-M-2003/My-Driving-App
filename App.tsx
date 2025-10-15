@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, TextInput, ScrollView,Button } from 'react-native';
 
 export default function App() {
-  const age = 20
-  const licenseyears= 2;
+  const age = 20;
+  const licenseyears= 0;
   let feedback = '';
   if (age >= 18)   
    if(licenseyears >= 3) 
@@ -38,6 +38,7 @@ export default function App() {
     
 
   return (
+    
     <SafeAreaView style={styles.container}>
     <View style={styles.content}>
       <Text style={[styles.response,{fontSize:48, color:'yellow',marginBottom:35}]}></Text>
@@ -48,7 +49,12 @@ export default function App() {
       <Text style={styles.response}>License Years: {licenseyears}</Text>
       <Text  style = {styles.response}>{feedback} {/*This is how you comment things out*/ }</Text> 
       <Text style={[styles.response,{fontSize:48, color:'yellow',marginBottom:35, textAlign:'center'}]}>{feedback}</Text>
-       <Text style={[styles.response,{fontSize:48, color:'yellow',marginBottom:35, textAlign:'center'}]}>{drivingRank}</Text>
+      <Text style={[styles.response,{fontSize:48, color:'yellow',marginBottom:35, textAlign:'center'}]}>{drivingRank}</Text>
+      <TextInput style={styles.inputbox} placeholder='Enter your age :' keyboardType='numeric'></TextInput>
+      <View style={{marginTop: 15, width:'60%',backgroundColor:'green'}}>
+      <Button title='Check Details'></Button>
+      </View>
+      
     </View>
     </SafeAreaView>
    
@@ -85,5 +91,13 @@ const styles = StyleSheet.create({
   top:0,
   position:'absolute',
   
+},
+
+inputbox:
+{
+  width:'80%',
+  borderWidth: 1,
+  borderColor: 'white',
+  padding: 10
 }
 });
